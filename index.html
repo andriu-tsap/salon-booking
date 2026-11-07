@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Linia — stylizacja brwi i rzęs, Katowice</title>
+<meta name="description" content="Laminacja brwi, lifting rzęs i henna w centrum Katowic. Zarezerwuj wizytę online w minutę.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#">Studio <em>Linia</em></a>
+  <nav aria-label="Nawigacja"><a href="#cennik">Cennik</a><a href="#zespol">Zespół</a><a href="#pytania">Pytania</a></nav>
+  <a class="btn btn-small" href="#rezerwacja">Zarezerwuj</a>
+</header>
+
+<main>
+<section class="hero" id="rezerwacja">
+  <div class="intro">
+    <h1>Brwi i rzęsy, które nie wymagają poprawek co rano.</h1>
+    <p>Laminacja, lifting i henna w kameralnym studiu przy ul. Mariackiej. Wybierz zabieg i godzinę, a potwierdzenie przyjdzie SMS-em.</p>
+    <ul class="proof">
+      <li><strong>4,9</strong> średnia ocen z 312 opinii w Booksy</li>
+      <li><strong>Od 2019</strong> w centrum Katowic</li>
+    </ul>
+  </div>
+
+  <div class="booking" aria-label="Rezerwacja wizyty">
+    <ol class="steps" aria-label="Postęp rezerwacji">
+      <li data-step="1" class="on">Zabieg</li><li data-step="2">Termin</li><li data-step="3">Dane</li>
+    </ol>
+
+    <form id="book" novalidate>
+      <div class="panel" data-panel="1">
+        <h2>Wybierz zabieg</h2>
+        <div class="services" id="services" role="radiogroup" aria-label="Zabieg"></div>
+        <h3>Specjalistka</h3>
+        <div class="staff" id="staff" role="radiogroup" aria-label="Specjalistka"></div>
+        <button class="btn" type="button" data-next="2">Wybierz termin</button>
+      </div>
+
+      <div class="panel" data-panel="2" hidden>
+        <h2>Wybierz dzień i godzinę</h2>
+        <div class="days-wrap">
+          <button type="button" class="arrow" id="prev-days" aria-label="Wcześniejsze dni">‹</button>
+          <div class="days" id="days" role="radiogroup" aria-label="Dzień"></div>
+          <button type="button" class="arrow" id="next-days" aria-label="Późniejsze dni">›</button>
+        </div>
+        <div class="slots" id="slots" role="radiogroup" aria-label="Godzina"></div>
+        <div class="nav-row">
+          <button class="btn btn-ghost" type="button" data-next="1">Wróć</button>
+          <button class="btn" type="button" data-next="3">Dalej</button>
+        </div>
+      </div>
+
+      <div class="panel" data-panel="3" hidden>
+        <h2>Twoje dane</h2>
+        <label>Imię i nazwisko<input name="name" autocomplete="name" required></label>
+        <label>Telefon<input name="phone" type="tel" autocomplete="tel" required pattern="[0-9 +]{9,15}" placeholder="np. 600 100 200"></label>
+        <label class="check"><input type="checkbox" name="first" > To moja pierwsza wizyta (dostanę 10% rabatu)</label>
+        <div class="nav-row">
+          <button class="btn btn-ghost" type="button" data-next="2">Wróć</button>
+          <button class="btn" type="submit">Potwierdź rezerwację</button>
+        </div>
+      </div>
+
+      <p class="error" id="error" role="alert"></p>
+    </form>
+
+    <aside class="summary" id="summary" aria-live="polite"></aside>
+
+    <div class="done" id="done" hidden tabindex="-1">
+      <h2>Do zobaczenia!</h2>
+      <p id="done-text"></p>
+      <button class="btn btn-ghost" type="button" id="again">Zarezerwuj kolejną wizytę</button>
+    </div>
+  </div>
+</section>
+
+<section id="cennik" class="prices">
+  <h2>Cennik</h2>
+  <p class="lead">Ceny obejmują konsultację i dobór koloru. Bez ukrytych dopłat.</p>
+  <div class="price-cols" id="price-cols"></div>
+</section>
+
+<section id="zespol" class="team">
+  <h2>Kto Cię przyjmie</h2>
+  <div class="people" id="people"></div>
+</section>
+
+<section id="pytania" class="faq">
+  <h2>Częste pytania</h2>
+  <details><summary>Jak długo utrzymuje się laminacja brwi?</summary><p>Zwykle 6–8 tygodni. Efekt zależy od tempa wzrostu włosków i pielęgnacji: przez pierwsze 24 godziny nie mocz brwi.</p></details>
+  <details><summary>Czy mogę przyjść w makijażu?</summary><p>Tak, ale okolice oczu i brwi przed zabiegiem i tak oczyścimy. Najwygodniej przyjść bez tuszu do rzęs.</p></details>
+  <details><summary>Jak odwołać wizytę?</summary><p>Odpisz na SMS z potwierdzeniem albo zadzwoń najpóźniej 24 godziny przed terminem. Wtedy nic nie płacisz.</p></details>
+  <details><summary>Czy zabiegi są bezpieczne w ciąży?</summary><p>Hennę wykonujemy w ciąży bez przeszkód. Laminację i lifting odradzamy w pierwszym trymestrze.</p></details>
+</section>
+</main>
+
+<footer class="foot">
+  <p>Studio Linia, ul. Mariacka 7, Katowice · tel. 600 200 300</p>
+  <p>Projekt koncepcyjny, marka fikcyjna. Projekt i kod: <a href="https://andriu-tsap.github.io">Andrii Tsap</a></p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
